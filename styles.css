@@ -1,0 +1,413 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+/* =========================================================
+   THE GHOST DETECTIVE — DARK CASEBOOK THEME
+   ========================================================= */
+
+:root {
+    --ink: #F0E9D9;
+    --muted: #C0B8A7;
+    --paper: #202521;
+    --panel: #2A302B;
+    --accent: #D8B879;
+    --line: #596057;
+    --soft: #343B34;
+    --hover: #454D42;
+}
+
+/* ---------- Base application ---------- */
+
+.stApp {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+}
+
+[data-testid="stHeader"] {
+    background: var(--paper);
+}
+
+[data-testid="stSidebar"] {
+    background: var(--panel);
+    border-right: 1px solid var(--line);
+}
+
+[data-testid="stSidebar"] * {
+    color: var(--ink);
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: var(--ink) !important;
+    letter-spacing: -0.025em;
+}
+
+h1 {
+    font-size: 2.65rem !important;
+}
+
+h2 {
+    font-size: 1.75rem !important;
+}
+
+h3 {
+    font-size: 1.25rem !important;
+}
+
+p,
+li,
+label,
+.stMarkdown {
+    color: var(--ink);
+}
+
+[data-testid="stCaptionContainer"] p {
+    color: var(--muted) !important;
+}
+
+/* ---------- Metrics ---------- */
+
+[data-testid="stMetric"] {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 16px 18px;
+}
+
+[data-testid="stMetricLabel"] p {
+    color: var(--muted) !important;
+    font-size: 0.83rem;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--ink);
+}
+
+/* ---------- Buttons ---------- */
+
+div.stButton > button,
+div.stFormSubmitButton > button {
+    background: var(--panel) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--line) !important;
+    border-radius: 10px;
+    min-height: 42px;
+    font-weight: 600;
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+div.stButton > button p,
+div.stFormSubmitButton > button p {
+    color: var(--ink) !important;
+}
+
+div.stButton > button:hover,
+div.stFormSubmitButton > button:hover {
+    background: var(--hover) !important;
+    border-color: var(--accent) !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- Text inputs and dropdowns ---------- */
+
+input,
+textarea,
+[data-baseweb="select"] > div,
+[data-baseweb="input"] > div,
+[data-baseweb="textarea"] > div {
+    background-color: var(--panel) !important;
+    color: var(--ink) !important;
+    border-color: var(--line) !important;
+}
+
+input,
+textarea {
+    -webkit-text-fill-color: var(--ink) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--muted) !important;
+    -webkit-text-fill-color: var(--muted) !important;
+    opacity: 1 !important;
+}
+
+[data-baseweb="select"] *,
+[data-baseweb="popover"] *,
+[role="listbox"] * {
+    color: var(--ink);
+}
+
+[data-baseweb="select"] > div {
+    background-color: var(--panel) !important;
+    border-color: var(--line) !important;
+}
+
+[data-baseweb="select"] input,
+[data-baseweb="select"] [role="combobox"],
+[data-baseweb="select"] [data-testid="stMarkdownContainer"] p {
+    color: var(--ink) !important;
+    -webkit-text-fill-color: var(--ink) !important;
+}
+
+/* Dropdown menu options: preserve contrast */
+
+[data-baseweb="popover"],
+[data-baseweb="popover"] > div,
+[role="listbox"],
+[role="option"],
+ul[role="listbox"] {
+    background-color: #303730 !important;
+    color: #F0E9D9 !important;
+    border-color: var(--line) !important;
+}
+
+[role="option"] *,
+[role="listbox"] * {
+    color: #F0E9D9 !important;
+}
+
+[role="option"]:hover,
+[role="option"][aria-selected="true"] {
+    background-color: var(--hover) !important;
+    color: #FFFFFF !important;
+}
+
+/* ---------- Checkboxes, radio buttons and toggles ---------- */
+
+[data-testid="stCheckbox"] label,
+[data-testid="stRadio"] label,
+[data-testid="stToggle"] label {
+    color: var(--ink) !important;
+}
+
+[data-testid="stCheckbox"] [data-baseweb="checkbox"] > div {
+    border-color: var(--muted) !important;
+}
+
+[data-testid="stRadio"] [data-baseweb="radio"] > div {
+    border-color: var(--muted) !important;
+}
+
+[data-testid="stToggle"] [data-baseweb="switch"] > div {
+    background-color: var(--soft) !important;
+    border: 1px solid var(--muted) !important;
+}
+
+[data-testid="stToggle"] [data-baseweb="switch"] input:checked + div {
+    background-color: var(--accent) !important;
+}
+
+/* ---------- Progress bars ---------- */
+
+[data-testid="stProgress"] [role="progressbar"] {
+    background-color: var(--soft) !important;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+[data-testid="stProgress"] [role="progressbar"] > div {
+    background-color: #C6A365 !important;
+    border-radius: 3px;
+}
+
+/* ---------- Expanders ---------- */
+
+[data-testid="stExpander"] {
+    background-color: var(--panel) !important;
+    border: 1px solid #5B594B !important;
+    border-radius: 8px !important;
+    margin-bottom: 8px;
+    box-shadow: inset 0 0 0 1px rgba(216, 184, 121, 0.035);
+}
+
+[data-testid="stExpander"] summary {
+    font-weight: 600;
+}
+
+[data-testid="stExpander"] summary,
+[data-testid="stExpander"] summary p {
+    color: var(--ink) !important;
+}
+
+/* ---------- Chat messages and chat input ---------- */
+
+[data-testid="stChatMessage"] {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 14px;
+}
+
+[data-testid="stChatInput"],
+[data-testid="stChatInput"] > div,
+[data-testid="stChatInput"] textarea {
+    background-color: var(--panel) !important;
+    color: var(--ink) !important;
+    -webkit-text-fill-color: var(--ink) !important;
+    border-color: var(--line) !important;
+    border-radius: 12px;
+}
+
+[data-testid="stChatInput"] textarea::placeholder {
+    color: var(--muted) !important;
+    -webkit-text-fill-color: var(--muted) !important;
+    opacity: 1 !important;
+}
+
+[data-testid="stChatInput"] button {
+    background-color: var(--hover) !important;
+    color: var(--ink) !important;
+    border-color: var(--line) !important;
+}
+
+/* ---------- Tabs ---------- */
+
+[data-testid="stTabs"] [data-baseweb="tab-list"] {
+    gap: 6px;
+    border-bottom: 1px solid #746344;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab"] {
+    color: var(--muted) !important;
+    border-radius: 7px 7px 0 0;
+    padding: 11px 16px;
+}
+
+[data-testid="stTabs"] [data-baseweb="tab"][aria-selected="true"] {
+    color: var(--accent) !important;
+    background: #34382D;
+    border: 1px solid #8B7449;
+}
+
+/* ---------- Vintage casebook labels ---------- */
+
+.eyebrow,
+.section-label {
+    color: var(--accent);
+    font-family: Georgia, serif;
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.eyebrow {
+    margin-bottom: 9px;
+}
+
+/* ---------- Main case introduction ---------- */
+
+.case-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 82% 18%,
+            rgba(177, 124, 57, 0.20),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #252D26 0%,
+            #202721 55%,
+            #303329 100%
+        );
+    border: 1px solid #746344;
+    border-top: 3px solid var(--accent);
+    border-radius: 18px;
+    padding: 34px 36px;
+    margin: 12px 0 22px;
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18),
+        inset 0 0 0 4px rgba(216, 184, 121, 0.035);
+}
+
+.case-hero p {
+    color: #D0C8B7;
+    line-height: 1.9;
+    margin-bottom: 0;
+    max-width: 760px;
+    font-size: 1rem;
+}
+
+.case-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2rem;
+    line-height: 1.35;
+    margin-bottom: 14px;
+    color: #F0E4CA;
+}
+
+.case-hero .eyebrow {
+    color: var(--accent);
+}
+
+/* ---------- Evidence and field notes ---------- */
+
+.note-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid #A98A54;
+    border-radius: 5px;
+    padding: 15px 18px;
+    margin: 8px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.note-card p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+/* ---------- Dividers and keyboard focus ---------- */
+
+hr {
+    border-color: var(--line);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent) !important;
+    outline-offset: 2px;
+}
+
+/* ---------- Responsive layout ---------- */
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    .case-hero {
+        padding: 20px;
+    }
+
+    .case-title {
+        font-size: 1.65rem;
+    }
+}
+
+/* Expanded evidence clue header */
+div[data-testid="stExpander"] details[open] > summary {
+    background-color: #2B302B !important;
+    color: #D8B879 !important;
+}
+
+/* Keep the clue header text readable */
+div[data-testid="stExpander"] details[open] > summary p {
+    color: #D8B879 !important;
+}
+
+/* Expanded clue body */
+div[data-testid="stExpander"] details[open] > div {
+    background-color: #2B302B !important;
+}
